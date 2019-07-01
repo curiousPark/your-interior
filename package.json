@@ -2,6 +2,15 @@
   "name": "your-interior",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "cross-env NODE_PATH=src HTTPS=false  react-scripts start",
+    "build": "cross-env NODE_PATH=src  react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  
+  },
+
+
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -10,13 +19,16 @@
     "antd": "^3.12.4",
     "axios": "^0.18.0",
     "@babel/polyfill": "^7.2.5",
-    "es6-promise": "^4.2.5"
+    "react-app-polyfill": "^0.2.0",
+    "es6-promise": "^4.2.5",
+    "react-media": "^1.9.2",
+    "lodash": "^4.17.11",
+    "immutable": "^4.0.0-rc.12",
+    "styled-components": "^4.1.3",
+    "react-countup": "^4.0.0"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "cross-env": "^5.2.0"
   },
   "eslintConfig": {
     "extends": "react-app"

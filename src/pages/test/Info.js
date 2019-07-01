@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-import {reducer} from './../Common'
+import {reducer} from '../../Common'
 
 const Info = () => {
   const [state, dispatch] = useReducer(reducer, {
