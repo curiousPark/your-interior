@@ -180,8 +180,6 @@ class Splash extends Component {
                         e.timetable = map.get(e.userId.toString());
                     }
 
-        
-                   
 
                     this.setState({
                         experts : experts
