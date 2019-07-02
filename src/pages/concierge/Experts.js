@@ -6,126 +6,6 @@ import styled from 'styled-components';
 import _ from 'lodash';
 import Media from 'react-media';
 
-const ContentBox = styled.div`
-  width: 984px;
-  height: auto;
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  margin-top: 37px;
-  position : relative;
-  ${p => p.more === 'on' && `
-    height: 1200px;
-    overflow: hidden;
-`}
-`;
-
-const MobleContentBox = styled.div`
-  width: 100%;
-  height: auto;
-  display: flex;
-  justify-content : flex-start;
-  align-items: center;
-  flex-direction: column;
-  text-align:center;
-  padding-bottom: 40px;
-  ${p => p.more === 'on' && `
-  height: 3200px;
-  overflow: hidden;
-`}
-`;
-
-const BttonBox = styled.div`
-  width: 456px;
-  height: 60px;
-  margin: 0 auto;
-  margin-top: 70px;
-  padding-bottom: 50px;
-`;
-
-const QuickMenu = styled.div`
-  width: 100%;
-  height: 62px;
-  background-color:#555555;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  -webkit-transition: bottom .5s;
-  -moz-transition: bottom .5s;
-  transition: bottom .5s;
-  z-index: 1000;
-  ${p => p.motion === 'down' && `
-    bottom: -70px;
-`}
-`;
-
-const Reset = styled.div`
-  width: 34px;
-  height: 34px;
-  background-color: #555555;
-  float: left;
-
-`;
-
-const Choose = styled.div`
-  width: 268px;
-  height: 36px;
-  line-height: 35px;
-  float: left;
-  margin-left: 15px;
-  background-color: #ffe20c;
-  
-  font-size: 12px;
-  font-weight: 300;
-  text-align: center;
-  color: rgba(27, 27, 27, 0.7);
-  ${p => p.active === 'off' && `
-    background-color: #ebebeb;
-    color: rgba(189, 189, 189, 0.9);
-  
-  `}
-`;
-
-const B = styled.b`
-  font-size: 16px;
-  font-weight: bold;
-  color: rgba(27, 27, 27, 0.9);
-  ${p => p.active === 'off' && `
-  color: rgba(189, 189, 189, 0.9);
-
-`}
-`;
-
-
-const MoreBtn = styled.div`
-  width: 206px;
-  height: 58px;
-  border: 1px solid #979797;
-  font-size: 20px;
-  font-weight: 500;
-  text-align: center;
-  line-height: 58px;
-  color: rgba(27,27,27,0.7);
-  margin 0 auto;
-  margin: 0 10px;
-  cursor: pointer;
-  background-color: #ffffff;
-  color: rgba(27,27,27,0.9);
-  margin: 0 auto;
- margin-top: 30px;
- ${p => p.device === 'mobile' && `
- width: 180px;
- height: 52px;
- font-size: 17px;
- line-height: 52px;
-`}
-  ${p => p.more === 'off' && `
-    display: none;
-`}
-`;
-
-
 
 let lastPos = window.pageYOffset;
 let direction = '';
@@ -482,3 +362,124 @@ class Experts extends Component {
 
 
 export default Experts;
+
+
+const ContentBox = styled.div`
+  width: 984px;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  margin-top: 37px;
+  position : relative;
+  ${p => p.more === 'on' && `
+    height: 1200px;
+    overflow: hidden;
+`}
+`;
+
+const MobleContentBox = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content : flex-start;
+  align-items: center;
+  flex-direction: column;
+  text-align:center;
+  padding-bottom: 40px;
+  ${p => p.more === 'on' && `
+  height: 3200px;
+  overflow: hidden;
+`}
+`;
+
+const BttonBox = styled.div`
+  width: 456px;
+  height: 60px;
+  margin: 0 auto;
+  margin-top: 70px;
+  padding-bottom: 50px;
+`;
+
+const QuickMenu = styled.div`
+  width: 100%;
+  height: 62px;
+  background-color:#555555;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-transition: bottom .5s;
+  -moz-transition: bottom .5s;
+  transition: bottom .5s;
+  z-index: 1000;
+  ${p => p.motion === 'down' && `
+    bottom: -70px;
+`}
+`;
+
+const Reset = styled.div`
+  width: 34px;
+  height: 34px;
+  background-color: #555555;
+  float: left;
+
+`;
+
+const Choose = styled.div`
+  width: 268px;
+  height: 36px;
+  line-height: 35px;
+  float: left;
+  margin-left: 15px;
+  background-color: #ffe20c;
+  
+  font-size: 12px;
+  font-weight: 300;
+  text-align: center;
+  color: rgba(27, 27, 27, 0.7);
+  ${p => p.active === 'off' && `
+    background-color: #ebebeb;
+    color: rgba(189, 189, 189, 0.9);
+  
+  `}
+`;
+
+const B = styled.b`
+  font-size: 16px;
+  font-weight: bold;
+  color: rgba(27, 27, 27, 0.9);
+  ${p => p.active === 'off' && `
+  color: rgba(189, 189, 189, 0.9);
+
+`}
+`;
+
+
+const MoreBtn = styled.div`
+  width: 206px;
+  height: 58px;
+  border: 1px solid #979797;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 58px;
+  color: rgba(27,27,27,0.7);
+  margin 0 auto;
+  margin: 0 10px;
+  cursor: pointer;
+  background-color: #ffffff;
+  color: rgba(27,27,27,0.9);
+  margin: 0 auto;
+ margin-top: 30px;
+ ${p => p.device === 'mobile' && `
+ width: 180px;
+ height: 52px;
+ font-size: 17px;
+ line-height: 52px;
+`}
+  ${p => p.more === 'off' && `
+    display: none;
+`}
+`;
+

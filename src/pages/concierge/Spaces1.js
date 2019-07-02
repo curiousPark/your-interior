@@ -52,8 +52,13 @@ const Spaces1 = (props) => {
 
   const [state, dispatch] = useReducer(reducer, initialState)
 
-  
-  useEffect(() => {
+
+  const updateSpaces = (spaces) => dispatch({ type: 'updateSpaces', spaces: spaces });
+  const updateCardIds = (cardIds) => dispatch({ type: 'updateCardIds', cardIds: cardIds });
+  const updateCards = (cards) => dispatch({ type: 'updateCards', cards: cards })
+  const updateActive = (active) => dispatch({ type: 'updateActive', active: active })
+ 
+  const getPostData = () => {
     if(!props.location.state)  { return false;}
     if(!props.location.state.formData) { return false;}
     if(!props.location.state.formData.spaces) { return false;}
@@ -70,20 +75,21 @@ const Spaces1 = (props) => {
         }
         return c;
       });
-   
+  
     updateSpaces(spaces);
     updateCardIds(cardIds);
     updateCards(cards);
     updateActive('on');
-
+    
+  }
+  
+  useEffect(() => {
+    getPostData()
+ 
   }, []);
 
 
 
-  const updateSpaces = (spaces) => dispatch({ type: 'updateSpaces', spaces: spaces });
-  const updateCardIds = (cardIds) => dispatch({ type: 'updateCardIds', cardIds: cardIds });
-  const updateCards = (cards) => dispatch({ type: 'updateCards', cards: cards })
-  const updateActive = (active) => dispatch({ type: 'updateActive', active: active })
 
   const handleActiveChange = (card, e) => {
 
@@ -105,6 +111,7 @@ const Spaces1 = (props) => {
       ...state.cardIds,
       category: card.id,
     } 
+
     updateCards(cards);
     updateActive('on');
     updateSpaces(spaces);
@@ -113,9 +120,6 @@ const Spaces1 = (props) => {
   }
 
   const movePage = _ => {
-
-    console.log(state);
-    return false;
 
     if(state.active === 'on'){
         let {history, location} = props

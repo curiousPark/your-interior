@@ -147,7 +147,7 @@ const Speciality = styled.div`
 
 const CbBox = styled.div`
   width: 79px;
-  height: 92px;
+  height: 80px;
   float: left;
 `;
 const CbTimeBox = styled.div`
@@ -199,14 +199,8 @@ const CbTime = styled.div`
 const ExpertCard = ({selected,device ,...p}) => {
   return (
     <Card selected={selected} device={device}  onClick={p.onClick}>
-      <Carousel autoplay>
-          {p.img && p.img.map( (img, idx) => {
-              return(
-              <ImgCard key={idx} id='portfolio'  src={`https://interiorbrothers.com${Util.srcConvert(img.src, 2)}`} />
-              )
-          })}
+                    <ImgCard  id='portfolio'  src={`https://interiorbrothers.com${Util.srcConvert(p.img[0].src, 2)}`} />
 
-      </Carousel>
         <style>{`
             .ant-carousel { padding: 0 15px; }
         .ant-carousel .slick-dots {bottom: 15px;}
@@ -223,36 +217,24 @@ const ExpertCard = ({selected,device ,...p}) => {
         </ContentHeader>
         <ContentBody>
           <div style={{float:'left'}}>
-            <div style={{height:'94px'}}>
+            <div style={{height:'80px'}}>
               <CbBox>
                   <CbTitle>사업자 유형</CbTitle>
                   <CbTitle>경력</CbTitle>
-                  <CbTitle>활동지역</CbTitle>
                   <CbTitle>주요분야</CbTitle>
                       
                 </CbBox>
                 <CbBox>
                   <CbContent>{p.businessType}</CbContent>
                   <CbContent>{p.career}년</CbContent>
-                  <CbContent>{p.availableArea}</CbContent>
                   <CbContent>{p.mainSpecialty }</CbContent>
                 </CbBox>
             </div>
-            <div id='more' style={{float:'left', cursor:'pointer', padding: '4px 10px', border: '1px solid #efefef', textAlign: 'center', backgroundColor:'#ffffff'}}>회사정보 더보기</div>
+            <div id='more' style={{  float:'left', cursor:'pointer', padding: '4px 10px', border: '1px solid #efefef', textAlign: 'center', backgroundColor:'#ffffff'}}>회사정보 더보기</div>
           </div>
           <div style={{float:'left'}}>
             <CbTimeBox>
-              { p.timetable ?
-                  [1,2,3,4].map((t, i) => {
-                    return p.timetable[i+1] ?
-                    <CbTime key={i} color={p.timetable[i+1] && p.timetable[i+1].length > 6 ?  'red': ''} >{p.timetable[i+1] && p.timetable[i+1].length > 6 ?  `${Util.dayCode[i+1].date}일(${Util.dayCode[i+1].name}) 상담불가` :  `${Util.dayCode[i+1].date}일(${Util.dayCode[i+1].name}) 상담가능` }</CbTime>
-                    :
-                     <CbTime key={i}  >{ `${Util.dayCode[t].date}일(${Util.dayCode[t].name}) 상담가능` }</CbTime>
-                  }) :
-                  [1,2,3,4].map((t, i) => {
-                  return <CbTime key={i}  >{ `${Util.dayCode[t].date}일(${Util.dayCode[t].name}) 상담가능` }</CbTime>
-              })
-              }
+             <CbTime color='red' >{`상담불가`}</CbTime>
             </CbTimeBox>
           </div>
         </ContentBody>

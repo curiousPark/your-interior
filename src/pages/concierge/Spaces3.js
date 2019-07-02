@@ -5,57 +5,6 @@ import Util from "../../lib/Util";
 import Media from 'react-media';
 import _ from 'lodash';
 
-const ContentBox = styled.div`
-  width: 1072px;
-  min-height: 330px;
-  height: auto;
-  margin: 0 auto;
-  margin-top: 170px;
-
-`;
-
-const MoblileContentBox = styled.div`
-    margin-top: 0px;
-    display:flex;
-    flex-direction:row;
-    justify-content : center;
-    width:320px;
-    margin: 0 auto;
-`;
-
-const Page = styled.div`
-   display:flex;
-   flex-direction:column;
-   justify-content : flex-start;
-   align-item:center;
-   height:${p => `
-     ${p.height}px;
-  `}
-`;
-
-const MobilePage = styled.div`
-   display:flex;
-   flex-direction:column;
-   justify-content : space-around;
-   align-item:center;
-   height:${p => `
-     ${p.height}px;
-  `}
-`;
-
-const BttonBox = styled.div`
-  width: 456px;
-  height: 60px;
-  margin: 0 auto;
-  margin-top: 130px;
-  text-align: center;
-  ${p => p.type === 'S' && `
-     width: 260px;
-     height: 40px;
-     margin-top: 43px;
-  `}
-`;
-
 
 class Spaces3 extends Component {
     state = {
@@ -70,6 +19,8 @@ class Spaces3 extends Component {
       })
   }
     componentDidMount(){
+
+      console.log(this.props);
     
       if(!this.props.location.state)  {this.moveInit();  return false;}
       let cardIds = this.props.location.state.formData.cardIds;
@@ -297,3 +248,56 @@ class Spaces3 extends Component {
 
 
 export default Spaces3;
+
+
+
+const ContentBox = styled.div`
+  width: 1072px;
+  min-height: 330px;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 170px;
+
+`;
+
+const MoblileContentBox = styled.div`
+    margin-top: 0px;
+    display:flex;
+    flex-direction:row;
+    justify-content : center;
+    width:320px;
+    margin: 0 auto;
+`;
+
+const Page = styled.div`
+   display:flex;
+   flex-direction:column;
+   justify-content : flex-start;
+   align-item:center;
+   height:${p => `
+     ${p.height}px;
+  `}
+`;
+
+const MobilePage = styled.div`
+   display:flex;
+   flex-direction:column;
+   justify-content : space-around;
+   align-item:center;
+   height:${p => `
+     ${p.height}px;
+  `}
+`;
+
+const BttonBox = styled.div`
+  width: 456px;
+  height: 60px;
+  margin: 0 auto;
+  margin-top: 130px;
+  text-align: center;
+  ${p => p.type === 'S' && `
+     width: 260px;
+     height: 40px;
+     margin-top: 43px;
+  `}
+`;
